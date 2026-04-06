@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "749958262381",
+    "project_id": "drive-hub-lk",
+    "storage_bucket": "drive-hub-lk.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749958262381:android:b8a5166036f014bcbb9964",
+        "android_client_info": {
+          "package_name": "com.vmmobile.drivehublk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-oogv5BWwdhSvbKMwWDJcBGhVczfd_cE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
