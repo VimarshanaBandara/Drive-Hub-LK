@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// Your real screens
+// Screens
 import 'package:drive_hub_lk_srilanka/homePage.dart';
 import 'package:drive_hub_lk_srilanka/pass_papers_screen/pass_papers_home.dart';
 import 'package:drive_hub_lk_srilanka/syllabus_screen/syllabus_home.dart';
 import 'package:drive_hub_lk_srilanka/map_screen/learners_map_screen.dart';
+
+// Reusable banner ad — bottomNavigationBar slot එකේ use කරනවා
+import 'package:drive_hub_lk_srilanka/widgets/banner_ad_widget.dart';
 
 class HomeMenuScreen extends StatelessWidget {
   const HomeMenuScreen({super.key});
@@ -60,11 +63,13 @@ class HomeMenuScreen extends StatelessWidget {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+      // Banner ad — Scaffold ය bottom safe area handle කරනවා automatically
+      bottomNavigationBar: const BannerAdWidget(),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        toolbarHeight: 46, // smaller app bar
+        toolbarHeight: 46,
         title: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -76,7 +81,7 @@ class HomeMenuScreen extends StatelessWidget {
             Text(
               '1.0.5+7',
               style: TextStyle(
-                  color: Colors.white.withOpacity(0.5),
+                  color: Colors.white.withValues(alpha: 0.5),
                   fontSize: 10,
                   fontWeight: FontWeight.w500),
             )
@@ -104,7 +109,7 @@ class HomeMenuScreen extends StatelessWidget {
           Positioned(
               bottom: -70, right: -40, child: _blob(240, Colors.white24)),
 
-          // header text (no white sheet)
+          // header text
           Positioned(
             left: 16,
             right: 16,
@@ -147,7 +152,7 @@ class _Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
+      children: [
         Text('Quick Menu',
             style: TextStyle(
                 color: Colors.white,
@@ -202,7 +207,7 @@ class _ColorCardState extends State<_ColorCard> {
             ),
             boxShadow: [
               BoxShadow(
-                color: g.first.withOpacity(.28),
+                color: g.first.withValues(alpha: .28),
                 blurRadius: 16,
                 offset: const Offset(0, 10),
               ),
@@ -214,8 +219,8 @@ class _ColorCardState extends State<_ColorCard> {
               borderRadius: BorderRadius.circular(18),
               gradient: LinearGradient(
                 colors: [
-                  Colors.white.withOpacity(.12),
-                  Colors.white.withOpacity(.06)
+                  Colors.white.withValues(alpha: .12),
+                  Colors.white.withValues(alpha: .06)
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -229,7 +234,7 @@ class _ColorCardState extends State<_ColorCard> {
                   width: 56,
                   height: 56,
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(.22),
+                    color: Colors.white.withValues(alpha: .22),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Icon(widget.item.icon, color: Colors.white, size: 30),
@@ -257,7 +262,7 @@ class _ColorCardState extends State<_ColorCard> {
                       width: 34,
                       height: 34,
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(.24),
+                        color: Colors.white.withValues(alpha: .24),
                         borderRadius: BorderRadius.circular(999),
                       ),
                       child: const Icon(Icons.chevron_right_rounded,

@@ -1,5 +1,6 @@
 // lib/pass_papers_screen/pass_papers_home.dart
 import 'dart:math' as math;
+import 'package:drive_hub_lk_srilanka/widgets/banner_ad_widget.dart';
 import 'package:flutter/material.dart';
 import 'pass_papers_viewer.dart';
 
@@ -34,6 +35,7 @@ class PassPapersHome extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color(0xFFF1F4F8),
+      bottomNavigationBar: const BannerAdWidget(),
       appBar: AppBar(
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.transparent,
@@ -135,7 +137,7 @@ class _RankCard extends StatelessWidget {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: gradient.first.withOpacity(.28),
+                    color: gradient.first.withValues(alpha: .28),
                     blurRadius: 18,
                     offset: const Offset(0, 10),
                   ),
@@ -155,7 +157,7 @@ class _RankCard extends StatelessWidget {
                     height: 8,
                     margin: EdgeInsets.only(right: i == 2 ? 0 : 6),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(.35),
+                      color: Colors.white.withValues(alpha: .35),
                       shape: BoxShape.circle,
                     ),
                   ),
@@ -177,8 +179,8 @@ class _RankCard extends StatelessWidget {
                   ),
                   gradient: LinearGradient(
                     colors: [
-                      Colors.white.withOpacity(.15),
-                      Colors.white.withOpacity(.05)
+                      Colors.white.withValues(alpha: .15),
+                      Colors.white.withValues(alpha: .05)
                     ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -190,7 +192,7 @@ class _RankCard extends StatelessWidget {
                       right: 12,
                       top: 12,
                       child: Icon(Icons.more_horiz,
-                          color: Colors.white.withOpacity(.9)),
+                          color: Colors.white.withValues(alpha: .9)),
                     ),
                     Center(
                       child: Column(
@@ -235,8 +237,8 @@ class _RankCard extends StatelessWidget {
                         shape: BoxShape.circle,
                         gradient: LinearGradient(
                           colors: [
-                            Colors.white.withOpacity(.35),
-                            Colors.white.withOpacity(.15)
+                            Colors.white.withValues(alpha: .35),
+                            Colors.white.withValues(alpha: .15)
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
@@ -244,7 +246,7 @@ class _RankCard extends StatelessWidget {
                         border: Border.all(color: Colors.white, width: 2),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(.18),
+                            color: Colors.black.withValues(alpha: .18),
                             blurRadius: 10,
                             offset: const Offset(0, 6),
                           ),
@@ -325,9 +327,9 @@ class _StatChip extends StatelessWidget {
       height: 28,
       padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(.18),
+        color: Colors.white.withValues(alpha: .18),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(.35)),
+        border: Border.all(color: Colors.white.withValues(alpha: .35)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

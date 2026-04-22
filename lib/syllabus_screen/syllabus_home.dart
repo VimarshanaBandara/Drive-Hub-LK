@@ -1,3 +1,4 @@
+import 'package:drive_hub_lk_srilanka/widgets/banner_ad_widget.dart';
 import 'package:flutter/material.dart';
 import 'syllabus_viewer.dart';
 
@@ -45,6 +46,7 @@ class SyllabusHome extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color(0xFFF1F4F8),
+      bottomNavigationBar: const BannerAdWidget(),
       appBar: AppBar(
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.transparent,
@@ -167,7 +169,7 @@ class _RankCard extends StatelessWidget {
                     width: 36,
                     height: 6,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(.35),
+                      color: Colors.white.withValues(alpha: .35),
                       borderRadius: BorderRadius.circular(6),
                     ),
                   ),
@@ -308,7 +310,7 @@ class _RightRankBlob extends StatelessWidget {
       width: 96,
       height: height,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(.10),
+        color: Colors.white.withValues(alpha: .10),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(48),
           bottomLeft: Radius.circular(48),

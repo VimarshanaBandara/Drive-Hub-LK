@@ -11,6 +11,7 @@ import 'package:drive_hub_lk_srilanka/simakari_screen/simakari_homepage.dart';
 import 'package:drive_hub_lk_srilanka/traficlight_screen/trafic_homepage.dart';
 import 'package:drive_hub_lk_srilanka/vidhana_screen/vidana_home.dart';
 import 'package:drive_hub_lk_srilanka/vividha_screen/vividha_home.dart';
+import 'package:drive_hub_lk_srilanka/widgets/banner_ad_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -166,11 +167,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: const Color(0xFFF7F9FC),
+      bottomNavigationBar: const BannerAdWidget(),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         systemOverlayStyle: SystemUiOverlayStyle.dark,
@@ -260,7 +260,7 @@ class _GradientListCard extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: c.withOpacity(.28),
+              color: c.withValues(alpha: .28),
               blurRadius: 18,
               offset: const Offset(0, 10),
             ),
@@ -286,7 +286,7 @@ class _GradientListCard extends StatelessWidget {
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(.15),
+                            color: Colors.black.withValues(alpha: .15),
                             blurRadius: 8,
                             offset: const Offset(0, 6),
                           ),
@@ -362,7 +362,7 @@ class _GradientListCard extends StatelessWidget {
             Container(
               width: 1,
               height: double.infinity,
-              color: Colors.white.withOpacity(.35),
+              color: Colors.white.withValues(alpha: .35),
             ),
             Expanded(
               flex: 1000 - (split * 1000).round(),
@@ -402,9 +402,9 @@ class _MiniPill extends StatelessWidget {
       height: 24,
       padding: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(.18),
+        color: Colors.white.withValues(alpha: .18),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white.withOpacity(.35)),
+        border: Border.all(color: Colors.white.withValues(alpha: .35)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -429,47 +429,4 @@ class _MiniPill extends StatelessWidget {
 Color _darken(Color c, [double amt = .12]) {
   final hsl = HSLColor.fromColor(c);
   return hsl.withLightness((hsl.lightness - amt).clamp(0.0, 1.0)).toColor();
-}
-
-class _LogoButton extends StatelessWidget {
-  final VoidCallback onTap;
-  const _LogoButton({required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(28),
-        onTap: onTap,
-        child: Container(
-          width: 44,
-          height: 44,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            boxShadow: const [
-              BoxShadow(
-                color: Color(0x22000000),
-                blurRadius: 10,
-                offset: Offset(0, 6),
-              ),
-            ],
-            gradient: const LinearGradient(
-              colors: [Color(0xFFF8FAFC), Color(0xFFEFF4FF)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-            border: Border.all(color: Color(0xFFE5EAF0)),
-          ),
-          padding: const EdgeInsets.all(3),
-          child: ClipOval(
-            child: Image.asset(
-              'assets/app_icon/drivehublk_1024.png',
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 }

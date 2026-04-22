@@ -32,6 +32,16 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+        <!--
+            Google AdMob App ID.
+            Development/Testing: Google's official test App ID use කරනවා.
+            Production release කරන විට මෙය ඔබගේ real AdMob App ID එකෙන් replace කරන්න:
+            https://apps.admob.com → App settings → App ID
+        -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

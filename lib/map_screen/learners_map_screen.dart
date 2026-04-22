@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:drive_hub_lk_srilanka/widgets/banner_ad_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'
     show rootBundle, Clipboard, ClipboardData;
@@ -321,6 +322,7 @@ class _LearnersMapScreenState extends State<LearnersMapScreen> {
 
     return Scaffold(
       backgroundColor: const Color(0xFFF6F8FC),
+      bottomNavigationBar: const BannerAdWidget(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
