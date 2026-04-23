@@ -1,19 +1,8 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-// ---------------------------------------------------------------------------
-// Ad Unit IDs
-//
-// ⚠️  DEVELOPMENT: Google test IDs use කරනවා.
-//     Production release කරන විට ඔබගේ real Ad Unit IDs replace කරන්න:
-//     https://apps.admob.com → Apps → [Your App] → Ad units → Banner
-// ---------------------------------------------------------------------------
-const _kAndroidBannerAdUnitId = 'ca-app-pub-3940256099942544/6300978111';
-const _kIosBannerAdUnitId = 'ca-app-pub-3940256099942544/2934735716';
-
-String get _adUnitId =>
-    Platform.isIOS ? _kIosBannerAdUnitId : _kAndroidBannerAdUnitId;
+// Android Banner Ad Unit ID (Production)
+const _kBannerAdUnitId = 'ca-app-pub-7778261196555839/9137056397';
 
 /// Reusable adaptive banner ad widget.
 ///
@@ -55,7 +44,7 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
     if (adSize == null || !mounted) return;
 
     BannerAd(
-      adUnitId: _adUnitId,
+      adUnitId: _kBannerAdUnitId,
       size: adSize,
       request: const AdRequest(),
       listener: BannerAdListener(

@@ -6,7 +6,7 @@ void main() {
   // Flutter engine initialize වෙනකන් wait කරනවා (AdMob init කරන්න අවශ්‍යයි)
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Google Mobile Ads SDK initialize කරනවා - app start වෙන විටම
+  // Google Mobile Ads SDK initialize කරනවා — App ID: ca-app-pub-7778261196555839~3088334977
   MobileAds.instance.initialize();
 
   runApp(MyApp());
