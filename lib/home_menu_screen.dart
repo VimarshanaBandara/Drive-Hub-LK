@@ -79,7 +79,7 @@ class HomeMenuScreen extends StatelessWidget {
                     fontWeight: FontWeight.w900,
                     fontSize: 16)),
             Text(
-              '1.0.6+8',
+              '1.0.7+9',
               style: TextStyle(
                   color: Colors.white.withValues(alpha: 0.5),
                   fontSize: 10,
